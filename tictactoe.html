@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+   
+    <canvas id="test"></canvas>
+
+    <div class="game-container" id="game-container">
+        <div class="container">
+            <h2 class="title">
+              <span class="title-word title-word-1">Tic</span>
+              <span class="title-word title-word-2">Tac</span>
+              <span class="title-word title-word-3">Toe</span>
+            </h2>
+        </div>      
+        <div class="options">
+            <button id="vs-ai-button"class=" glow-on-hover" onclick="selectOpponent('ai')">Player vs AI</button>
+            <button id="vs-player-button" class="glow-on-hover" onclick="selectOpponent('player')">Player vs Player</button>
+            <div id="ai-difficulty" class="option-buttons hidden">
+                <button id="easy-button" class=" glow-on-hover2" onclick="setDifficulty('easy')">Easy AI</button>
+                <button id="medium-button" class=" glow-on-hover2" onclick="setDifficulty('medium')">Medium AI</button>
+                <button id="hard-button" class=" glow-on-hover2" onclick="setDifficulty('hard')">Hard AI</button>
+            </div>
+        </div>
+        
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+              <p id="modalMessage"></p>
+            </div>
+          </div>
+        
+        <button class="start-button glow-on-hover" id="start-button" onclick="startGame()">Start Game</button>
+        
+    </div>
+    
+        
+            
+       
+    <div class="game-container" id="board-container" style="display: none;">
+        <p id="score-display"class="color">Player X: 0 - Player O: 0</p>
+        <div class="board" id="board">
+            <div class="cell" onclick="makeMove(0, 0)"></div>
+            <div class="cell" onclick="makeMove(0, 1)"></div>
+            <div class="cell" onclick="makeMove(0, 2)"></div>
+            <div class="cell" onclick="makeMove(1, 0)"></div>
+            <div class="cell" onclick="makeMove(1, 1)"></div>
+            <div class="cell" onclick="makeMove(1, 2)"></div>
+            <div class="cell" onclick="makeMove(2, 0)"></div>
+            <div class="cell" onclick="makeMove(2, 1)"></div>
+            <div class="cell" onclick="makeMove(2, 2)"></div>
+        </div>
+        <p class="result" id="result"></p>
+        <div id="myModal2" class="modal2">
+            <div class="modal-content">
+              <p id="modalMessage2"></p>
+            </div>
+          </div>
+        <button class="glow-on-hover"onclick="restartGame()">Restart Game</button>
+        <button class="glow-on-hover"onclick="backToMainScreen()">Back to Main Screen</button>
+    </div>
+
+    <script src="tictactoe.js"></script>
+</body>
+</html>
